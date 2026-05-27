@@ -1,0 +1,23 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "roots": ["<rootDir>/src/tests"],
+  "testMatch": ["**/*.test.ts"],
+  "transform": {
+    "^.+\\.tsx?$": ["ts-jest", { "tsconfig": "tsconfig.json" }]
+  },
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/tests/**",
+    "!src/server.ts",
+    "!src/db/migrate.ts"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 60,
+      "functions": 60,
+      "lines": 60
+    }
+  },
+  "setupFiles": ["<rootDir>/src/tests/setup.ts"]
+}
